@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Avatar } from "../Avatar";
+
 export default function Feed() {
     return (
         <div className="container">
@@ -7,10 +9,8 @@ export default function Feed() {
                 <article className="post">
                     <header className="post__header">
                         <div className="user">
-                            <a href="/" className="user__thumb">
-                                <img src="img/profiles/yoda/yoda-profile.jpg" alt="" />
-                            </a>
 
+                            <Avatar image="https://avatarfiles.alphacoders.com/125/thumb-125043.jpg" />
                             <a href="/" className="user__name">Mestre Yoda</a>
                         </div>
 
@@ -20,7 +20,7 @@ export default function Feed() {
                     </header>
 
                     <figure className="post__figure">
-                        <img src="img/profiles/yoda/yoda-1.jpg" alt="" />
+                        <img src="/" alt="" />
                     </figure>
 
                     <nav className="post__controls">
@@ -39,10 +39,8 @@ export default function Feed() {
 
                     <div className="post__status">
                         <div className="user">
-                            <a href="/" className="user__thumb">
-                                <img src="img/profiles/domino/domino-profile.jpg" alt="" />
-                            </a>
 
+                            <Avatar image="https://avatarfiles.alphacoders.com/125/thumb-125043.jpg" size="small" />
                             <span>
                                 curtido por <a href="/">Domino</a> e outras <a href="/">7 pessoas</a>
                             </span>
