@@ -3,11 +3,16 @@ import React from "react";
 export function DrawerContent() {
     const [messages, setMessages] = React.useState([]);
 
-    React.useEffect(() => {
-    fetch('https://624c9312c172b69d69274ae4.mockapi.io/api/v1/chat')
+    async function searchMessages() {
+        fetch('https://624c9312c172b69d69274ae4.mockapi.io/api/v1/chat')
         .then(response => response.json())
         .then(data=> setMessages(data));
-    })
+    }
+
+    React.useEffect(() => {
+        let interval = setInterval(() => searchMessages(), 5000);
+        return() => clearInterval(interval);
+    });
 
     return (
         <div className="drawer__content">
