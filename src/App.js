@@ -4,13 +4,13 @@ import './CSS/normalize.css';
 import './CSS/main.css';
 import './CSS/fontawesome.min.css';
 
-import { Topbar, Stories, Feed, Drawer } from './components';
+import { Avatar, Topbar, Stories, Feed, Drawer, Post } from './components';
 
 function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [users, setUsers] = React.useState([]);
 
-  function catchStories (usuario) {
+  function catchStories(usuario) {
     const stories = usuario.flatMap(({ stories }) => stories);
 
     console.log({ stories })
@@ -36,9 +36,30 @@ function App() {
         ? ('Loading...')
         : (
           <React.Fragment>
-            <Stories dates={catchStories(users)} />
+            <Stories>
+              {catchStories(users)
+              .map((story) => (
 
-            <Feed />
+                <Avatar
+                  key={story.id}
+                  image={story.story}
+                  size="large" selectable
+                />
+
+              ))}
+            </Stories>
+
+            <Feed>
+              {users.map((user) => (
+                <Post 
+                  key={user.id}
+                  avatar={user.avatar}
+                  name={user.name}
+                  photo={user.photos[0]?.picture}
+                  text={user.text}
+                />
+              ))}
+            </Feed>
           </React.Fragment>
         )
       }

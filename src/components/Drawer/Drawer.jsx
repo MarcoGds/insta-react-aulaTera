@@ -1,5 +1,7 @@
 import React from "react";
 import './Drawer.css';
+import { DrawerForm } from "./DraweForm";
+import { DrawerContent } from "./DraweContent";
 
 const Drawer = ({ open = false, closeChat }) => {
     function sendForm (event) {
@@ -17,16 +19,10 @@ const Drawer = ({ open = false, closeChat }) => {
                 <button type="button" onClick={() => closeChat(false)}>Fechar</button>
             </div>
 
-            <div className="drawer__content">
-                Olá, sou um drawer
-            </div>
-            <footer className="drawer__footer">
-                <form onSubmit={sendForm}>
-                    <input name="nome" type="text" placeholder="Nome" />
-                    <input name="mensagem" type="text" placeholder="Digite sua mensagem" />
-                    <button type="submit">Enviar</button>
-                </form>
-            </footer>
+            <DrawerContent />
+
+            <DrawerForm />
+            
         </div>
     )
 };
