@@ -1,6 +1,4 @@
-import React, { Children } from "react";
-
-import { Avatar } from "../Avatar";
+import React from "react";
 
 export default function Feed({ children }) {
     return (
