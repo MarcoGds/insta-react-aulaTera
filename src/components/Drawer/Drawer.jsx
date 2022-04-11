@@ -4,14 +4,7 @@ import { DrawerForm } from "./DraweForm";
 import { DrawerContent } from "./DraweContent";
 
 const Drawer = ({ open = false, closeChat }) => {
-    function sendForm (event) {
-        event.preventDefault();
 
-        const nome = event.target.elements.nome.value;
-        const mensagem = event.target.elements.mensagem.value;
-        console.log({ nome, mensagem });
-    }
-    
     return (
 
         <div className='drawer' data-open = {open}>
