@@ -5,8 +5,6 @@ import '../CSS/normalize.css';
 import '../CSS/main.css';
 import '../CSS/fontawesome.min.css';
 
-import { BrowserRouter } from 'react-router-dom';
-
 import { Feed, Post, Drawer, Topbar } from '../components';
 
 export function User() {

@@ -4,12 +4,10 @@ import '../CSS/normalize.css';
 import '../CSS/main.css';
 import '../CSS/fontawesome.min.css';
 
-import { BrowserRouter } from 'react-router-dom';
-
-import { Avatar, Topbar, Stories, Feed, Drawer, Post } from '../components';
+import { Avatar, Stories, Feed, Post } from '../components';
 
 export function Home() {
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
   const [users, setUsers] = React.useState([]);
 
   function catchStories(usuario) {
@@ -30,9 +28,6 @@ export function Home() {
 
   return (
     <React.Fragment>
-      <Drawer open={drawerOpen} closeChat={setDrawerOpen} />
-
-      <Topbar openChat={setDrawerOpen} />
 
       {users.lenght === 0
         ? ('Loading...')
